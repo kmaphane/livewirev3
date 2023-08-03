@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme")
+const themeChange = require("theme-change")
 export default {
   content: [
     "./resources/**/*.blade.php",
@@ -8,6 +10,9 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  daisyui: {
+    themes: true,
+  },
+  plugins: [require("daisyui"), themeChange],
 }
 
